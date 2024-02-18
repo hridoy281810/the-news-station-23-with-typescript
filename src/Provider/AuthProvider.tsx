@@ -47,7 +47,7 @@ const AuthProvider = ({children}:AuthProviderProps )=> {
         setLoading(true);
         return signOut(auth);
     };
-const authInfo ={
+const authInfo:AuthContextType  ={
         user,
         createUser,
         setLoading,

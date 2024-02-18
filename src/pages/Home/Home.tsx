@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { NewsItem, fetchAllNewsData } from '../../redux/slice/AllNewsDataSlice';
 import NewsByCategory from '../../components/Home/NewsByCategory';
-import Navbar from '../../components/Nacbar/Navbar';
+import Navbar from '../../components/Navbar/Navbar';
 import Header from '../../components/Home/Header';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import AllNews from '../../components/Home/AllNews';

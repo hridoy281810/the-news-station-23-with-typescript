@@ -1,6 +1,7 @@
-import React from 'react';
 
+import { Link } from 'react-router-dom';
 const Navbar = () => {
+
   return (
     <div >
     <div className="navbar bg-base-100">
@@ -11,35 +12,32 @@ const Navbar = () => {
       </div>
       <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
         <li><a>Item 1</a></li>
-        <li>
-          <a>Parent</a>
-          <ul className="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </li>
+      
         <li><a>Item 3</a></li>
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">daisyUI</a>
-  </div>
+  </div> 
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1">
-      <li><a>Item 1</a></li>
-      <li>
-        <details>
-          <summary>Parent</summary>
-          <ul className="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </details>
+    <ul className="menu menu-horizontal px-1  ">
+   
+      <li className='tsx font-semibold mr-2'>
+        <Link to='/'>
+          Home
+         
+        </Link>
       </li>
-      <li><a>Item 3</a></li>
+      <li className='tsx font-semibold mr-2'><Link to='/'>About</Link></li>
+      <li className='tsx font-semibold mr-2'><Link to='/'>Carear</Link></li>
+    
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Button</a>
+  <div className="avatar">
+  <div className="w-10 rounded-full ring ring-gray-700 ring-offset-base-100 ring-offset-2">
+    <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+  </div>
+</div>
+<Link to='/login' className="py-2 px-10 btn-active text-white btn-neutral font-bold ms-4">Login</Link>
   </div>
 </div>
     </div>
