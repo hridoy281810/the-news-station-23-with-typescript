@@ -17,7 +17,7 @@ const GoogleProvider = new GoogleAuthProvider();
 const AuthProvider = ({children}:AuthProviderProps )=> {
     const [user, setUser] = useState<User |null>(null);
     const [loading, setLoading] = useState<boolean >(true);
-    const createUser = (email: string, password: string ) =>{
+    const crateUser = (email: string, password: string )  =>{
         return createUserWithEmailAndPassword(auth, email, password)
     }
     // login
@@ -49,7 +49,7 @@ const AuthProvider = ({children}:AuthProviderProps )=> {
     };
 const authInfo:AuthContextType  ={
         user,
-        createUser,
+        crateUser,
         setLoading,
         loading,
         signIn,

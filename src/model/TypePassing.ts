@@ -6,12 +6,13 @@ export type User = {
     email?: string | null;
     displayName?: string | null;
     photoULR?: string | null;
+    password?: string | null;
 }
 
 // auth information data type 
 export interface AuthContextType {
     user:User | null;
-    createUser: (email: string,password:string)=> Promise<void | UserCredential>;
+    crateUser: (email: string,password:string)=> Promise<void | UserCredential>;
     setLoading: (loading: boolean)=> void;
     loading: boolean;
     signIn: (email: string,password:string)=> Promise<void | UserCredential>;
