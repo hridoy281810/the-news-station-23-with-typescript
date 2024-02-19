@@ -11,7 +11,7 @@ const NewsByCategory: React.FC<NewsByCategoryProps> = ({ button, handleFilter })
             {button.map((category, index) => (
                 <div key={index}>
                     <button
-                        className='text mb-2 font-bold bg-gray-200 p-2 rounded-lg'
+                        className='text  font-semibold  p-2 hover:underline'
                         onClick={() => handleFilter(category)}
                     >
                         {category}

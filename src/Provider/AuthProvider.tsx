@@ -16,6 +16,8 @@ const GoogleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({children}:AuthProviderProps )=> {
     const [user, setUser] = useState<User |null>(null);
+    console.log(user);
+    
     const [loading, setLoading] = useState<boolean >(true);
     const crateUser = (email: string, password: string )  =>{
         return createUserWithEmailAndPassword(auth, email, password)

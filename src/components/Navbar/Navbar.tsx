@@ -1,7 +1,15 @@
 
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
+import toast from 'react-hot-toast';
 const Navbar = () => {
-  
+  const authContext = useContext(AuthContext)
+  const handleLogOut : () => void = ()=> {
+    authContext?.logout()
+      .then(()=>toast.success("logout successfully"))
+      .catch((err) => console.log(err));
+  };
 
   return (
     <div >
@@ -33,12 +41,16 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-  <div className="avatar">
+  <div title={`${authContext?.user? authContext?.user?.email : 'no title'}`}  className="avatar ">
   <div className="w-10 rounded-full ring ring-gray-700 ring-offset-base-100 ring-offset-2">
-    <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+    <img src={`${authContext?.user && authContext?.user?.photoULR=== null? authContext?.user?.photoULR: "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" }`  } />
   </div>
 </div>
-<Link to='/login' className="py-2 px-10 btn-active text-white btn-neutral font-bold ms-4">Login</Link>
+{authContext?.user ? (
+<Link onClick={handleLogOut} to='/' className="py-2 px-10 btn-active text-white btn-neutral font-bold ms-4">Logout</Link>
+) : (
+  <Link  to='/login' className="py-2 px-10 btn-active text-white btn-neutral font-bold ms-4">Login</Link>
+)}
   </div>
 </div>
     </div>
@@ -46,3 +58,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

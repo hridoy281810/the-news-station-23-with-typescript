@@ -18,7 +18,7 @@ const SignUp:React.FC= () => {
      const password = form.password.value
      setErrorMessage('')
          setSuccess('')
-         if (password.length < 8) {
+         if (password.length < 6) {
           setErrorMessage('Enter minimum six digit password')
          }
          authContext?.crateUser(email,password)
